@@ -30,7 +30,7 @@ class Database:
         self.user_db.commit()
 
     def remove_username(self, username):
-        self.ucur.execute('delete from users where username={}'.format(username))
+        self.ucur.execute('delete from users where username="{}"'.format(username))
 
     def get_all_usernames(self):
         self.ucur.execute('select * from users')

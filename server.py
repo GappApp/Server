@@ -15,13 +15,13 @@ def sign_in(username):
         return '{"Status" : "Error!", "Description" : "Username exist."}'
 
 
-@app.route('/sign_out/<username>')
+@app.route('/sign_out/<username>/')
 def sign_out(username):
     if db.username_exist(username):
         db.remove_username(username)
-        return '{"Status": "Ok."}'
+        return '{"Status" : "Ok."}'
     else:
-        return '{"Status" : "Error!", "Description" : "Username don\'t exist."}'
+        return '{"Status" : "Error!", "Description" : "Username does not exist."}'
 
 
 @app.route('/send/<sender>/<receiver>/<message>')
